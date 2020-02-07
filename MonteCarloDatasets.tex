@@ -1,0 +1,118 @@
+\section{Datasets}
+\label{sec:datasets}
+The datasets used in this analysis are shown in Table~\ref{tab:datasets}. We use the high-luminosity runs of the 2013 \pPb~run (13d,e,f) and the 2017 pp run (17q) that were collected with EMCal triggers, which are listed in Table~\ref{tab:triggerstrings}.  
+
+\begin{table}[h]
+   \centering
+   \caption{Datasets used in this analysis. The runs listed in the table corresponds to those that are in the good run list appropriate for analysis using the EMCal and ITS detectors.}
+   \label{tab:datasets}
+   \begin{tabular*}{1.0\columnwidth}{@{\extracolsep{\fill}}llccc@{}}
+      	\hline
+        Name  & Config. &  Run Number list  & Pass &  Integrated Luminosity\\
+        \hline
+        13b& \pPb & 195344, 195351, 195389, & pass4& $\sim$1.0 nb$^{-1}$\\
+        \hline
+      	13d& \pPb & 195872, 195871, 195867, 195831, 195829,  & pass4& $\sim$1.0 nb$^{-1}$\\
+        &  & 195787, 195783, 195767, 195760, 195724. &   &\\
+        \hline
+        13e & \pPb & 196310, 196309, 196308, 196214, 196208, & pass4 & $\sim$1.3 nb$^{-1}$\\
+         &  &      196201, 196200, 196199, 196197, 196194, & & \\ 
+         &  &     196187, 196185, 196107, 196091, 196090, & & \\
+         &  &    196089, 196085, 195958, 195955, 195935.  & & \\
+         \hline
+         13f & Pb--p & 197342, 197341, 197302, 197300, 197299, & pass4 & $\sim$2.3 nb$^{-1}$\\
+          &  &                 197298, 197297, 197296, 197260, 197258,&  &\\
+          &  &                 197256, 197255, 197254, 197248, 197247,& & \\
+          &  &                 197189, 197153, 197152, 197138, 197092,&  &\\
+          &  &                 197091, 197027, 197015, 197012, 197011,& & \\
+          &  &                 197003, 196974, 196973, 196972, 196967,&  & \\
+          &  &                 196965, 196721, 196720, 196714, 196706, & & \\
+          &  &                 196703, 196702, 196701, 196648, 196646,& & \\
+          &  &                 196608, 196535, 196528. & &\\               \hline
+          13f\_new & Pb--p &    196433, 196474, 196475, 196477, 196722. & pass4 & $\sim$1.1 nb$^{-1}$\\
+          & &                     196772, 196773, 196774, 196869, 196870, & & \\
+        &    &                    196874, 196876, 197139, 197142, 197143, & & \\  
+& & 197144, 197145, 197147, 197148, 197149, & & \\
+& & 197150, 197348, 197349, 197351, 197386 & & \\
+& & 197387, 197388. & &\\               \hline
+  	17q & pp & 282441, 282440, 282439, 282437, 282415,  & pass1\_wSDD & $\sim$300 nb$^{-1}$\\
+     &  & 282411, 282402, 282399, 282398, 282393,  & &\\ 
+     & & 282392, 282391, 282367, 282366, 282365  & & \\
+		\hline  
+   \end{tabular*}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \caption{EMCal triggers used in this analysis.}
+   \label{tab:triggerstrings}
+   \begin{tabular*}{1.0\columnwidth}{@{\extracolsep{\fill}}ll@{}}
+        \hline
+        Dataset &  Trigger Strings\\
+        \hline
+        \pPb & CEMC7EG1-B-NOPF-CENTNOTRD, CEMC7EG2-B-NOPF-CENTNOTRD,\\
+        \hline
+        pp & CEMC7EG2-B-NOPF-CALO, CDMC7DG2-B-NOPF-CALO,\\ 
+           & CEMC7EG2-B-NOPF-CENT,	CDMC7DG2-B-NOPF-CENT\\
+        \hline
+   \end{tabular*}
+\end{table}
+
+
+The EMCal gamma trigers (EG1, EG2, DG1, DG2) are based on the summed energy in 2$\times$2 adjacent tiles (a tile is composed of an EMCal module, 2$\times$2 adjacent cells). The trigger thresholds were 7 and 11 \GeVc~during the 2013 \pPb~run and {5 \GeVc} during the 2017 pp run. %The EMCal jet (EJ1, EJ2) triggers are based on a patch of 32 $\times$ 32 adjacent towers, corresponding to an area of approximately 0.2 rad was used. This jet patch trigger fired if an integrated patch energy of at least 10 GeV (low-energy trigger) or 20 GeV (high-energy trigger) was found.
+
+Due to the 2-in-1 magnet design of the LHC, which requires the same magnetic rigidity for both colliding beams, the beams had different energies during the \pPb~run ({$E_{\mathrm{p}}$ = 4 TeV}, {$E_{\mathrm{Pb}} $= 4 TeV$\times$Z}, where $Z=82$ is the atomic number of lead). In the lead nucleus, the energy per nucleon was therefore  {$1.56$ TeV $= (Z/A) \times$ 4 TeV}, where $A =$ 208 is the nuclear
+mass number of the lead isotope used. This energy asymmetry results in an average nucleon--nucleon center of mass collision energy of {$\sqrt{s_{\mathrm{NN}}}=5 $ TeV} and a rapidity boost of this frame by $\pm$0.465 units relative to the ALICE rest frame in the direction of proton beam. Around halfway through the 2013 \pPb~run, the beam directions were flipped, yielding similar integrated luminosities in both beam configurations. %Following an established convention, we report pseudorapidity in the nucleon-nucleon collision frame, $\eta^{*}$, with a positive (negative) pseudorapidity corresponding to production in the downstream proton (downstream nuclear) beam direction. Therefore, a massless particle emitted at $\eta_{\mathrm{cm}}=0$ in the nucleon-nucleon center-of-mass frame will be detected at $\eta_{\mathrm{lab}}=$+0.465 in the laboratory frame.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+During the 2013 \pPb~run period, the TPC suffered from space-charge distortions\footnote{For more information on the problems with space-charge distortions due to high-luminosity in \pPb~run, see: https://alice.its.cern.ch/jira/browse/PWGPP-314.} that affect tracking, leading to a very drastic drop in efficiency for tracks with $\pt> 4$ \GeVc. We bypass this issue by using ITS-only tracking as detailed in Section~\ref{sec:tracking}.
+For the 2017 pp data, the TPC was also inactive due to the high luminosity of the runs considered in this analysis. We use the 17q period, during which all six layers of the ITS were active.
+
+The average number of inelastic collisions per bunch crossing, $\mu$, is 0.020--0.060 for the 2013 \pPb~data set and in the range 0.015--0.045 for the 2017 pp dataset~\footnote{This information can be found in \url{http://aliqaevs.web.cern.ch/aliqaevs/data/2013/LHC13d/pass4/global_properties.pdf} and \url{http://aliqaevs.web.cern.ch/aliqaevs/data/2017/LHC17q/cpass1_pass1/global_properties.pdf}}.% Thus, one expects an in-time pileup, i.e. multiple collisions in the same bunch crossing at the level of less than 1$\%$ (given by the Poisson probability of $P(n>1) = 1-P(n=0) = e^{-\mu})$. 
+
+%Figure~\ref{fig:RejectionFactorpPb} shows the rejection factor of the EMCal gamma triggers. The curves already reached a plateau for clusters with $\pt=12$ \GeVc, which is the minimum $\pt$ used in this analysis. 
+
+%%\begin{figure}[h]
+%\center
+%\includegraphics[width=0.6\textwidth]{Datasets/RejectionFactorpPb2013}
+%\caption{Rejection factor curves for the 2013 p-Pb period (13def). Source: Ref.~\cite{Erwann}.}
+%\label{fig:RejectionFactorpPb}
+%\end{figure}
+
+
+%The total integrated luminosity of the 2013 p-Pb sample is about {4.6 nb$^{-1}$} {($\times$ $A$ = 967 nb$^{-1}$ pp equivalent luminosity)} and about {300 nb$^{-1}$} for the 2017 pp sample. Note that the DCal increases the geometrical acceptance for photons by roughly a factor of 1.3; therefore, comparable statistics of high-$\pt$ photons are expected for pp and p-Pb data.~\footnote{This is the first hard-probes analysis in ALICE that has similar statistics in the reference pp data at the same center-of-mass energy, and thus does not need to rely on extrapolations.}
+
+
+
+
+
+
+
+
+\section{Monte Carlo simulations}
+\label{sec:mcsimulations}
+We use Monte Carlo (MC) simulations to obtain the signal shower-shape distributions for the template fits (section~\ref{sec:purity}) and to study tracking performance (section~\ref{sec:tracking}).
+
+The simulations of hard processes are based on the \textsc{Pythia} event generator. In \textsc{Pythia}, the signal events are included via $2\to2$ matrix elements with $gq\to\gamma q$ and $q\bar{q}\to\gamma g$ hard scatterings, defined at the leading order, followed by the leading-logarithm approximation of the partonic shower. The soft underlying events in pp collisions as well as fragmentation are included with the default \textsc{Pythia} models. 
+
+For the simulation of \pPb~events, the pp samples are embedded into \pPb~inelastic events generated with \textsc{DPMJET}. The boost of $\Delta y=+0.465$ in the direction of the proton beam is reproduced. % to reproduce the experimentally measured global \pPb~event properties. 
+
+Table~\ref{tab:MCsamples} shows the MC simulations used in this analysis. Each sample is simulated with the detector configuration appropriate for the runs used in this analysis. 
+
+\begin{table}[h]
+   \centering
+   \caption{Monte Carlo simulations used in this analysis.}
+   \label{tab:MCsamples}
+   \begin{tabular*}{1.0\columnwidth}{@{\extracolsep{\fill}}llcc@{}}
+    \hline
+        Name  & Configuration & JIRA ticket link \\
+        \hline        
+ 17g6a1	 &\pPb, 5 TeV, \textsc{Pythia8} Gamma-Jet +DPMJET anchored to 13d,e,f& \href{https://alice.its.cern.ch/jira/browse/ALIROOT-7271}{ALIROOT-7271}\\
+ 17g6a3	 &\pPb, 5 TeV, \textsc{Pythia8} Jet-Jet +\textsc{DPMJET} anchored to 13def& \href{https://alice.its.cern.ch/jira/browse/ALIROOT-7271}{ALIROOT-7271}\\
+  13b2    &\pPb, 5 TeV, \textsc{Dpmjet} anchored to LHC13b,c & \href{https://alimonitor.cern.ch/productions/3996/tag.html}{39374}\\
+ 18b10a(b)\_calo	 &pp 5 TeV, \textsc{Pythia8} Gamma-Jet anchored to 17p/q& \href{https://alice.its.cern.ch/jira/browse/ALIROOT-7692}{ALIROOT-7692}\\
+ 18l2a(b)     &pp 5 TeV, \textsc{Pythia8} Jet-Jet anchored to 17p/q& \href{https://alice.its.cern.ch/jira/browse/ALIROOT-8144}{ALIROOT-8144}\\
+   
+                 \hline
+   \end{tabular*}
+\end{table}

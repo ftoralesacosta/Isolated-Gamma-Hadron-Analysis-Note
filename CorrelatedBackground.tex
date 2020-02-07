@@ -1,0 +1,51 @@
+\section{Isolated-photon hadron correlations}
+In this section we present the method we use to extract \gammaiso-hadron azimuthal correlations. We select tracks with $|\eta|<0.8$ and $0.5 <\pttrack < 10$ \GeVc, following the studies shown in Section~\ref{sec:tracking}. We only consider cluster-track pairs within $|\Delta \eta| < 1.2$. Our cluster \pt~range selection is $12 < \ptcluster< 40\ \GeVc$, with isolation criteria of $\iso < 1.5\ \GeVc$. We apply the same track selection criteria described in Section~\ref{sec:tracking}, Table \ref{tab:track_cuts}. We present our results as a function of \zt, which is defined as:
+ \begin{equation}
+\zt = \frac{\pttrack}{\ptcluster}
+ \end{equation}
+
+Section~\ref{sec:decaybkgsubtraction} shows the way we correct for the impurity of our \gammaiso selection; Section~\ref{sec:EventMixing} describes the pair-acceptance correction obtained with the event-mixing method.
+
+
+\subsection{$\ydecay$ background Subtraction}
+\label{sec:decaybkgsubtraction}
+We split the clusters that pass our $\iso<1.5 $ GeV selection in two regions of interest, our signal region \(SR\) with the selection $\lambdasquare<0.3$, and our background region, \(BR\) as $\lambdasquare>0.4$ 
+
+We denote the number of clusters in the background region as \TBR~and the number of clusters in the signal region as \TSR. We can write \TSR~as:
+\begin{equation}
+\TSR = \TS + \TB.
+\end{equation}
+Here we define \TS~as our signal (i.e. isolated prompt photons) and \TB~as the background (decay photons that pass our $\gammaiso$ selection).  
+
+The number of cluster-track pairs per trigger, $P$ is:
+\begin{eqnarray}
+\label{eq:CSRCBR}
+\CSR &=& \frac{1}{\TSR}\PSR.\\
+\CBR &=& \frac{1}{\TBR }\PBR.
+\end{eqnarray}
+
+These quantities are measured directly. We want to separate the correlation function of signal from the correlation function of background as, which are defined as:
+\begin{eqnarray}
+\CS &=& \frac{1}{\TS}\PS\\
+\CB &=& \frac{1}{\TB}\PB
+\end{eqnarray}
+
+To measure the true signal correlation, \CS , we decompose the correlation measured in the signal region: 
+\begin{eqnarray}
+\CSR &=& \frac{1}{\TSR}\PSR = \frac{1}{\TSR}(\PS + \PB)\\
+\CSR &=& \frac{1}{\TSR}(\TS\CS +\TB\CB)\\
+\CSR &=& p\CS+ (1-p)\CB \label{eq:31}
+\end{eqnarray}
+where the purity of our $\gammaiso$ definition, called $p$, is equal to \TS/\TSR 
+~by definition and is measured with the template fit method as described in Section~\ref{sec:purity}.  
+
+Solving for \CS~in Equation~\ref{eq:31} yields:
+\begin{equation}
+\CS = \frac{\CSR - (1-p) \CBR}{p}.
+\label{eq:FinalSubtraction}
+\end{equation},
+
+where we have made the approximation that \CB~ (per-trigger pairs for decay photons that pass our $\gammaiso$ selection) can be approximated by the measured \CBR~(per-trigger pairs for decay photons that pass our isolation criteria but not our shower-shape selection). This is justified because the underlying physics process that dictates the number of correlated pairs is independent from the opening angle of the neutral-meson decay, which is what drives the shower-shape.
+
+%The correlated background subtraction detailed in Equation~\ref{eq:FinalSubtraction} assumes that the decay-photon hadron correlation we directly measure, \CBR, is an accurate estimation of the decay-photon hadron correlation that pollutes signal region. In principle, the decay photons from neutral-meson decays that pass the shower shape cut may be biased toward pairs with a smaller opening angle (larger cluster \pt). We checked this by forcing the \pt distributions in \CSR and \CBR. 
+

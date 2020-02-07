@@ -1,0 +1,80 @@
+
+\section{Isolation}
+\label{sec:isolation}
+In leading-order perturbative calculations, prompt photons are produced surrounded by small hadronic activity and fragmentation photons are only found within a jet. Beyond leading order, the direct and fragmentation components have no physical meaning and cannot be factorized; the sum of their cross sections is the physical observable. However, theoretical calculations can be simplified through the use of an isolation requirement, which also suppresses the background from decays of neutral mesons.
+
+We construct an isolation variable using only tracking information and avoid using calorimeter clusters. This choice prevents biases due to the correlation between 
+isolation criteria and $\pi^{0}$ decay opening angle and allow us to use the full acceptance of EMCal. This is at the expense of a lower purity.
+
+The isolation variable for this analysis is defined as the scalar sum of the transverse momentum of charged particles within an angular radius around the cluster direction, $R =\sqrt{(\Delta\varphi)^{2} +(\Delta\eta)^{2}  } =0.4$ (with $\Delta\varphi$ measured in radians), thus:
+\begin{equation}
+\iso^{\mathrm{raw}} = \sum_{\mathrm{track}~\in~\Delta R < 0.4}  \pt^{\mathrm{track}}   
+\label{eq:isoraw}
+\end{equation}
+The charged particles used as input for the isolation calculation have {$0.15<\pt<10$ \GeVc}, {$|\eta|<0.8$} and pass the selection described in Section~\ref{sec:tracking}. 
+
+The isolation variable defined in Equation~\ref{eq:isoraw} is susceptible to background from the charged particles from the underlying event, e.g. a truly isolated photon might appear non isolated due to overlap with particles not associated with the hard scattering. In order to correct for this effect, we apply an event-by-event underlying event subtraction, which is described in the following section. 
+
+\input{UnderlyingEvent}
+
+\subsection{UE correction to isolation variable}
+For each event and cluster, we subtract the underlying event using the measured charged-particle density $\rho$ that is calculated event-by-event as described in Section~\ref{sec:UEsubtraction}:
+\begin{equation}
+\iso = \iso^{\mathrm{raw}} - \rho\times\pi(0.4)^{2}.
+\end{equation}
+Thus, the average subtraction for the isolation cone of {$R=0.4$} is about {$1.6$ \GeVc} and {$0.8$ \GeVc} for \pPb~and pp collisions, with a standard deviation of {0.9 \GeVc} and {0.4 \GeVc}, respectively.  
+
+Figure~\ref{fig:iso_ue} shows the isolation distribution before and after underlying event subtraction for \pPb~and pp collisions. The distributions have a positive tail that decreases exponentially; this is expected as this observable effectively measures multi-jet production. The difference between the \pPb~and pp distribution at low $\iso$ values can be attributed to the effect of enhanced soft-particle production in \pPb~collisions. The underlying event subtraction modifies the isolation distribution only slightly. After subtraction, the distributions show a negative tail, which arises from a over-subtraction of the underlying event due to region-to-region fluctuations. In both cases, this tail falls by more than three orders of magnitude by $\iso=-3$ \GeVc, indicating that over-subtraction is a small effect.   
+
+\begin{figure}[h]
+\center
+\includegraphics[width=0.49\textwidth]{Isolation/IsolationWithUESubtraction_Skimmed_13def_root}
+\includegraphics[width=0.49\textwidth]{Isolation/IsolationWithUESubtraction_Skimmed_17q_root}
+\caption{Cluster isolation before and after underlying event subtraction in \pPb~(left panel) and pp (right panel) collisions.}
+\label{fig:iso_ue}
+\end{figure}
+
+Figure~\ref{MC_Isolation} shows the distribution of cluster isolation after UE subtraction for photon-jet and dijet simulations of \pPb~data (see Table~\ref{tab:MCsamples}). As expected, the distributions are rather different: whereas the dijet simulation shows a prominent exponential tail at large $\iso$ values, the photon-jet simulation shows a Gaussian-like shape that is mostly symmetrical except for a very small fraction of events that have large $\iso$ values. In both cases, the negative tail falls rather sharply, which is expected as it arises from region-to-region fluctuations of the UE that are independent of the hard-process involved. 
+
+\begin{figure}[h]
+\center
+\includegraphics[width=1.0\textwidth]{Purity/Isolation_MC_pPb.pdf}
+\caption{Isolation distribution of clusters that pass our selection in \pPb~photon-jet and dijet simulations, and corresponding cumulative distribution. Two vertical lines at $\iso=$ 1.5 \GeVc~(green) and $\iso=$ 5.0 \GeVc~are shown in the right panel for reference.}
+\label{MC_Isolation}
+\end{figure}
+
+For the purposes of template fitting, we also need to define a sideband that is dominated by background. For this we note that only about 1$\%$ of prompt photons of the photon-jet simulation have {$\iso>$ 5 \GeVc}. Given that the cross-section for prompt photons is about two orders of magnitude smaller than the background, this region is overwhelmingly dominated by background.   
+The cumulative distributions (Figure~\ref{MC_Isolation}, right panel) show that a {$\iso<$ 1.5 \GeVc} selection keeps about 90$\%$ of the signal and rejects about 60$\%$ of the background. We use this relatively loose photon isolation criteria to reduce the dependence of the results on the details of the simulation of the detector noise, tracking resolution, and the underlying event. 
+
+This isolation cut of {$\iso<$ 1.5 \GeVc} is used in conjunction with the shower-shape cut to complete our isolated-photon selection or ``$\gammaiso$ selection''. We call ``$\gammaiso$-candidates'' the clusters that pass our isolated photon selection because it still leaves a significant fraction of background (about 40$\%$ of the cross section, as just shown). 
+
+The main background present in our $\gammaiso$ selection is from multi-jet events where one jet typically contains a $\pi^{0}$ or $\eta$, which carries most of the jet energy, and is misidentified  as a photon because it decays into a photon pair that is collinear with respect to the EMCal cell granularity. Other sources of background arise from charged-to-neutral fluctuations of jet fragmentation that leads to low observable $\iso$ (that considers only charged-particles). 
+
+This creates the need to measure the purity of our $\gammaiso$-candidate selection, which is described in Section~\ref{sec:purity}. 
+
+%\subsection{Isolation efficiency}
+%The isolation efficiency is ratio of the numbers of photons which pass our isolation %criteria and the rest of the cluster selection to the total number of clusters that pass the cluster selection:
+
+%\begin{equation}
+%\epsilon(\pt^{\mathrm{reco}}) = \frac{N^{\mathrm{cluster cuts + ISO cut}}(\pt^{\mathrm{reco}})}{N^{\mathrm{cluster cuts}}(\pt^{\mathrm{reco}})}.
+%\end{equation}
+
+%The cluster selection was discussed in Section~\ref{sec:clusterselection} and summarized in Table~\ref{tab:photonCutFlow}. The resulting efficiency is shown as a function of cluster \pt~in Figure~\ref{fig:isoEff}.
+
+%The isolation efficiency is shown in Figure~\ref{fig:isoEff}. No strong dependence on $\pt$ is observed, and on average the efficiency is about 93$\%$ and 91$\%$ for pp and \pPb~ photon+jet simulated data respectively.
+
+%We show this for illustration purposes only, because we present results normalized to the number of reconstructed photons that are, to first order, insensitive to efficiency corrections. 
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=1.0\textwidth]{EfficiencyAppendix/MC_IsoEff.pdf}
+%\caption{Efficiency of isolation cut obtained from a pp and \pPb~ photon+jet simulation. A horizontal green line is placed at $\epsilon$ = 0.9 for reference. The error bars represent statistical uncertainties only.}
+%\label{fig:isoEff}
+%\end{figure}
+
+%%%[still need to think about this correlation plot. Truth iso also contains UE because Pythia simulates UE. ]
+%\begin{figure}[h]
+%\center
+%\includegraphics[height = 90mm]{Purity/pp_diject_MC.pdf}
+%\caption{Correlation graph between ISO and $ISO^{truth}$ using pp Dijet MC data. The horizontal line at 1.5GeV %(green) represents the selection cut and the black is an X=Y line for reference. The correlation coefficient between ISO and $ISO^{truth}$ is found to be 70$\%$.}
+%\label{pp Dijet Correlation}
+%\end{figure}

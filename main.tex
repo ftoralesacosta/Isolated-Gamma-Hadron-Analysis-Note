@@ -1,0 +1,182 @@
+\documentclass[ALICE,manyauthors]{ALICE_analysis_notes}
+%\documentclass[ALICE,manyauthors]{ALICE_scientific_notes}
+%
+
+\usepackage{natbib}
+\usepackage[toc,page]{appendix}
+
+\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}}
+\newcommand{\ptreco}{\ensuremath{p_{\mathrm{T}}^{\mathrm{reco}}}}
+\newcommand{\pttruth}{\ensuremath{p_{\mathrm{T}}^{\mathrm{true}}}}
+\newcommand{\pttrack}{\ensuremath{p_{\mathrm{T}}^{\mathrm{track}}}}
+\newcommand{\ptgamma}{\ensuremath{p_{\mathrm{T}}^{\mathrm{\gammaiso}}}}
+\newcommand{\ptcluster}{\ensuremath{p_{\mathrm{T}}^{\mathrm{cluster}}}}
+
+
+\newcommand{\Ntrig}{\ensuremath{N_{\mathrm{trig}}}}
+\newcommand{\Nsame}{\ensuremath{N_{\mathrm{same}}}}
+\newcommand{\Nmixed}{\ensuremath{N_{\mathrm{mixed}}}}
+
+
+\newcommand{\CBR}{\ensuremath{C_{\mathrm{BR}}}}
+\newcommand{\CSR}{\ensuremath{C_{\mathrm{SR}}}}
+\newcommand{\TBR}{\ensuremath{T_{\mathrm{BR}}}}
+\newcommand{\TSR}{\ensuremath{T_{\mathrm{SR}}}}
+\newcommand{\PBR}{\ensuremath{P_{\mathrm{BR}}}}
+\newcommand{\PSR}{\ensuremath{P_{\mathrm{SR}}}}
+
+\newcommand{\CS}{\ensuremath{C_{\mathrm{S}}}}
+\newcommand{\CB}{\ensuremath{C_{\mathrm{B}}}}
+\newcommand{\CD}{\ensuremath{C_{\mathrm{D}}}}
+\newcommand{\TS}{\ensuremath{T_{\mathrm{S}}}}
+\newcommand{\TB}{\ensuremath{T_{\mathrm{B}}}}
+\newcommand{\TD}{\ensuremath{T_{\mathrm{D}}}}
+\newcommand{\PS}{\ensuremath{P_{\mathrm{S}}}}
+\newcommand{\PB}{\ensuremath{P_{\mathrm{B}}}}
+\newcommand{\PD}{\ensuremath{P_{\mathrm{D}}}}
+
+\newcommand{\PbPb}{Pb--Pb}
+\newcommand{\pPb}{p--Pb}
+
+
+\newcommand{\pth}{\ensuremath{p_{\mathrm{T}^h}}}
+
+\newcommand{\pTD}{\ensuremath{p_{\mathrm{T}^D}}}
+
+
+\newcommand{\zt}{\ensuremath{z_{\mathrm{T}}}}
+\newcommand{\pizero}{\ensuremath{\pi^0}}
+\newcommand{\deltaphi}{\ensuremath{\Delta\phi}}
+\newcommand{\deltaeta}{\ensuremath{\Delta\eta}}
+\newcommand{\GeVc}{\ensuremath{\mathrm{GeV}/c}}
+\newcommand{\sqrts}{\ensuremath{\sqrt{s}}}
+
+\newcommand{\iso}{\ensuremath{\mathrm{ISO}}}
+\newcommand{\lambdasquare}{\ensuremath{\sigma^{2}_{\mathrm{long}}}}
+
+
+\newcommand{\ydecay}{\ensuremath{\gamma^\mathrm{decay}}}
+\newcommand{\gammaiso}{\ensuremath{\gamma^\mathrm{iso}}}
+
+\newcommand{\emax}{\ensuremath{E_{\mathrm{max}}/E_{\mathrm{cluster}}}}
+
+\newcommand{\sqrtsNN}{\ensuremath{\sqrt{s_\mathrm{NN}}}}
+\newcommand\photon{\ensuremath{\upgamma}}
+\newcommand\pT{\ensuremath{p_T}}
+\newcommand\ETmiss{\ensuremath{{\cancel{E}\!}_T}}
+
+\newcommand{\xobs}{\ensuremath{x_{\mathrm{obs}}}}
+
+%\newcommand{\jpsi}{\rm J/$\psi$}
+%\newcommand{\psip}{$\psi^\prime$}
+%\newcommand{\jpsiDY}{\rm J/$\psi$\,/\,DY}
+%\newcommand{\dd}{\mathrm{d}}
+%\newcommand{\chic}{$\chi_{\rm c}$}
+%\newcommand{\ezdc}{$E_{\rm ZDC}$}
+%\newcommand{\red}{\textcolor{red}}
+%\newcommand{\blue}{\textcolor{blue}}
+\newcommand{\slfrac}[2]{\left.#1\right/#2}
+\usepackage{rotating}
+\usepackage{placeins}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+%\usepackage{subcaption}
+%
+\usepackage{lineno}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\usepackage{textcomp}
+%\usepackage{lmodern}  % for bold teletype font
+\usepackage{amsmath}  % for \hookrightarrow
+\usepackage{xcolor}   % for \textcolor
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+\linenumbers
+\begin{document}%
+%%%%%%%%%%%%% ptdr definitions %%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{titlepage}
+%
+%\PHnumber{ALICE-ANA-2018-xxx} 
+\PHnumber{v3.0}
+\PHdate{\today}
+%
+%%% Put your own title + short title here:
+\title{Measurement of isolated photon--hadron correlations in \\5 TeV pp and \pPb~data}
+\ShortTitle{Measurement of isolated photon--hadron correlations in 5 TeV pp and \pPb~data}   % appears on right page headers
+%
+\author{Alwina Liu, Barbara Jacak, Dhruv Dixit, Fernando Torales - Acosta, Peter Jacobs, Miguel Arratia, Yue Shi Lai.}
+\author{
+University of California, Berkeley, Lawrence Berkeley National Laboratory\\
+}
+\author{Email: marratia@cern.ch}
+%
+\ShortAuthor{Berkeley Team}      % appears on left page headers, do not change
+%
+\begin{abstract}
+We present an analysis of isolated photon--hadron correlations using data collected in 2013 during the \sqrtsNN = 5 TeV \pPb~run and in 2017 during the 5 TeV pp run. We use a combination of isolation and shower-shape variables to reduce the background from neutral-meson decays. We measure the purity of our isolated-photon selection by using a template fit technique with a data-driven background estimate. We perform a measurement of per-trigger associated hadron yields for photons with {$|\eta|<0.67$} and {$12 < \pt < 40~\GeVc$} and associated charged particles with {$|\eta|<0.80$} and {$0.5 < \pt < 10~\GeVc$}. We do not observe a significant difference between pp and \pPb~data. We also found that \textsc{Pythia8.2} describes the data within uncertainties. 
+
+% We also measure the angular correlation, momentum balance, and flavor composition of isolated photon-jet pairs for photons in the range {$20 < \pt < 30~\GeVc$} and anti-$k_{\mathrm{T}}$, $R=0.4$ jets with reconstructed $\pt>$ 10 \GeVc. 
+\end{abstract}
+\end{titlepage}
+\tableofcontents
+\input{Intro}  
+\input{AnalysisSummary}
+\FloatBarrier
+\input{ExperimentalSetup}
+\input{MonteCarloDatasets}
+\FloatBarrier
+\input{EventSelection}
+\FloatBarrier
+\input{ClusterSelection.tex}
+\FloatBarrier
+\input{PhotonID.tex}
+\FloatBarrier
+\input{Isolation.tex}
+\FloatBarrier
+\input{Purity.tex}
+\FloatBarrier
+\input{Tracking.tex}
+\FloatBarrier
+\input{CorrelatedBackground}
+\FloatBarrier
+\input{EventMixing.tex}
+\FloatBarrier
+\input{GammaHadron.tex}
+\FloatBarrier
+\input{Systematics}
+\FloatBarrier
+\input{Results}
+\FloatBarrier
+\input{Conclusions} 
+\FloatBarrier
+
+ \begin{appendices}
+ \appendix
+ %\input{FiguresPreliminary}
+ %\FloatBarrier
+ %\input{Yaml}
+ %\FloatBarrier
+ %\input{AnalysisCode}
+ %\input{Checks}
+ \input{Appendix}
+%\input{EfficiencyAppendix.tex}
+ \end{appendices}
+\FloatBarrier
+\renewcommand\refname{Bibliography}
+\bibliographystyle{plain} % or try abbrvnat or unsrtnat
+\bibliography{biblio} % refers to example.bib
+
+
+\end{document}
+

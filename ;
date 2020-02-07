@@ -1,0 +1,28 @@
+Merge branch 'master' of https://git.overleaf.com/5c47a20abbebf743f94003fa
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: Fernando <fernando@Fernandos-MacBook-Pro-2.local>
+#
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 1 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   Purity.tex
+#	new file:   Purity/purities-pp-combined-12-40-7bins.pdf
+#	modified:   Tracking.tex
+#	new file:   Tracking/Matrix_tracking_its_MBMC_0GeV15GeV_dNdPt.pdf
+#	new file:   Tracking/etaEff_diffpt.pdf
+#	new file:   Tracking/refolding_pPb_its_MBMC_0GeV15GeV_dNdpt.pdf
+#

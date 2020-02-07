@@ -1,0 +1,58 @@
+
+\section{Event selection}
+\label{sec:eventselection}
+We use the following event selection criteria to ensure good event quality and uniform acceptance:
+\begin{itemize}
+\item Run passes QA for EMCal and ITS (the selected runs are listed in Table~\ref{tab:datasets}).
+\item At least one EMCal cluster with $\pt>12$ \GeVc.
+\item Selected at least one of the EMCal triggers (logical OR of the trigger strings listed in Table~\ref{tab:triggerstrings}).  %(low and high thresholds).
+\item Valid vertex ($|z|\neq0.0$) and $|z|<10$ cm 
+%\item Pileup rejection (\textsc{IsPileupFromSPD}(5, 0.8)=False).
+\end{itemize}
+
+Where the EMCal is mentioned, we use the same criteria on the DCal (used in the 17q dataset). We use EMCal in text for brevity.
+The number of events that pass our selection in each sample is shown in Table~\ref{tab:eventsselected}. We report the events selected for each trigger separately, as well as the logical OR combination. In \pPb~events, the number of events is dominated by the EG1 trigger (11 \GeVc~threshold), and by the EG2 trigger (5 \GeVc) in pp collisions. 
+
+\begin{table}[h]
+   \centering
+   \caption{Number of events that passed our full event selection for each of data taking period used in this analysis. The numbers are also shown separately for EG1 (DG1) and EG2 (DG2) triggers.}
+   \label{tab:eventsselected}
+   \begin{tabular*}{1.0\columnwidth}{@{\extracolsep{\fill}}llll@{}}
+    \hline
+    Dataset &  	N$^{\mathrm{EG1||EG2}}$ &	N$^{\mathrm{EG1}}$ & N$^{\mathrm{EG2}}$\\
+    \hline
+    13d &	134024 & 133326 & 12528\\
+    13e &	198108 & 196745 & 22409\\
+    13f &   340607 & 338198 & 38353\\
+    13f\_new & 241870 & 240074 & 30310\\
+%    Dataset &  	N$^{\mathrm{EG1||EG2||EJ1||EJ2}}$ &	N$^{\mathrm{EG1}}$ & N$^{\mathrm{EG2}}$ &	N$^{\mathrm{EJ1}}$  &	N$^{\mathrm{EJ2}}$ \\
+%    \hline
+%    13d &	173583 & 133326 & 12528 & 122168 & 20917\\
+%    13e &	206833 & 196745 & 22409 & 167651 & 3063\\
+%    13f &   365775 & 347684 & 40133 & 296144 & 6501\\
+%    13f\_new & 252738 & 240074 & 30310 & 204298 & 5110\\
+    \hline
+    Dataset &	N$^{\mathrm{EG2 || DG2}}$ &		N$^{\mathrm{EG2}}$ & N$^{\mathrm{DG2}}$\\
+    \hline
+
+    17q & 406934 & 301086 & 119498 \\
+ 
+    \hline
+   \end{tabular*}
+\end{table}
+
+%\begin{table}[h]
+%   \centering
+%   \caption{Number of events with at least one EMCal or DCal cluster with $\pt > 12 GeV/c$ for the pp period. The columns with the label \textit{filtered} refers to the numbers to events which passed our trigger selection, vertex cut, and pile up cut.}
+%   \label{tab:eventsselected_pp}
+%   \begin{tabular*}{1.0\columnwidth}{@{\extracolsep{\fill}}lllllll@{}}
+%    \hline
+%    Dataset & N$^{EG2 or DG2}$ &	N$_{filtered}^{EG2 or DG2}$ &	N$^{EG2}$ & N$^{DG2}$ &	N$^{EG2}_{filtered}$ & N$^{DG2}_{filtered}$\\
+%    \hline
+%    %17q &	406933 &	304621 &	301086	&	257767	&	119499	&	102242\\
+%    17q & 937949 &	727234 & 685402 & 279146  &	536212 &	218255\\
+%    \hline
+%    \textbf{pp} &	937949 &	727234 & 685402 & 279146  &	536212 &	218255\\
+%    \hline
+%   \end{tabular*}
+%\end{table}

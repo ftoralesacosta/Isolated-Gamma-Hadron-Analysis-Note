@@ -1,0 +1,22 @@
+\section{Code used in this analysis}
+\label{AnalysisCode}
+The code from the following github repositories was used in this analysis:
+\begin{itemize}
+\item Tracking, cluster, and jet performance and detector studies were done using \url{https://github.com/dhruvdixit/CorrelationAnalysis/blob/master/NtupleAnalysis/PhotonTruth.cc} (MC analysis) and \url{ 
+https://github.com/dhruvdixit/CorrelationAnalysis/blob/master/NtupleAnalysis/efficiencyCalculation.C} (data analysis)
+\item The gamma-hadron and gamma-jet analysis code can be found in \url{https://github.com/miguelignacio/CorrelationAnalysis}
+\item The base ntuplizer code is at \url{https://github.com/yslai/ntuple-gj}.
+\item In order to run the ntuplizer, we simply clone the repository, create a valid alien token, and run the command:
+\begin{lstlisting}[language=sh]
+/directory_address/ntuple-gj/macros/runNTGJ.C config/13d.yaml full
+\end{lstlisting}
+In the line above, 13d.yaml is the example configuration file given in ~\ref{ssec:config}. Any proper configuration file which follows the same format as the 13d.yaml will work. Running the above line will submit jobs on the grid, at which point the shell can be quit. Do not exit out of the alien shell, but simply quit the terminal. The job status can still be monitored on \href{https://alimonitor.cern.ch/users/jobs.jsp}{Alimoniter}. After the jobs are completed, we use:
+\begin{lstlisting}[language=sh]
+/directory_address/ntuple-gj/macros/alien_fastcopy yourGridOutputDirectory/OutputFolder localOutputDirectory/OutputFolder
+\end{lstlisting}
+and
+\begin{lstlisting}[language=sh]
+/directory_address/ntuple-gj/macros/MergeNtuple.C localOutputDirectory/OutputFolder/*/*/AnalysisResults.root ntuple_name.root
+\end{lstlisting}
+to copy the output AnalysisResults.root files and then merge all the root files and their TTrees into one TTree in one root file.
+\end{itemize}

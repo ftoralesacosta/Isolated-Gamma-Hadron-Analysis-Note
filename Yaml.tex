@@ -1,0 +1,10 @@
+\section{Configuration and yaml files}
+\label{Yaml}
+\subsection{The EMCal Corrections Yaml}
+The following lines are the code from our EMCalCorrections.yaml, where we configure and apply corrections to data of the EMCal such as cluster timing correction, cluterizer selection etc.
+\lstinputlisting[language=sh]{Yaml/emcal_correctionMC.yaml}
+As seen in the code, we apply cell energy, bad channel, clusterizer,and cluster-track matching corrections to all cluster selected while making the ntuple. Additionally, for ntuples of Monte Carlo, we have the Emulate Crosstalk correction as well. For data, we simply comment out the Emulate Crosstalk.
+\subsection{Ntuplizer Configuration Yaml} \label{ssec:config}
+The following lines of code are for the yaml file for the ntuplizer. It contains the information required to run and work on grid such as the data address, as well as the output address. Additionally, we can apply energy, momentum, trigger, and other selection requirements.
+\lstinputlisting[language=sh]{Yaml/13d.yaml}
+This is the configuration file in order to ntuplize the 13d data with a requirement to only select events with at least one cluster with E $>$ 10 GeV, which is done using the \textit{skimClusterMinE}. We have similar such variables for \pt~pand trigger selection as well. 

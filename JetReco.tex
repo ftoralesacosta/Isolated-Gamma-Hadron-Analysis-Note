@@ -1,0 +1,17 @@
+
+
+\section{Jet reconstruction}
+\subsection{Jet definition}
+\label{sec:jetreco}
+Jets are clustered using the iterative anti-$k_{\mathrm{T}}$ algorithm~\cite{Cacciari:2008gp} with the distance parameter $R = 0.4$. MC truth (``truth'') jets are reconstructed from particles that are considered stable by \textsc{pythia8}, namely {$c\tau < 1000\:\mathrm{mm}$}. 
+
+Raw reconstructed (``reco'') jets are reconstructed from tracks with {$0.15<\pt<15$ \GeVc} and $|\eta|<0.8$. This track-based jet measurement approach is complementary to calorimeter-based measurements with results independent of calorimeter calibrations, selection, and uncertainties. 
+
+The tracks used in this analysis are reconstructed with information from only the ITS. The performance of the ITS-only tracking is discussed in detail in Section~\ref{sec:tracking}; in summary, the overall efficiency for charged-particle detection, including the effect of tracking efficiency as well as geometrical acceptance, is 70$\%$ at $\pt=$ 150 MeV/c and increases to $85\%$ at 1~\GeVc~and above. 
+
+%%%[We need to add this, but is not ready yet]
+%We checked that the jets measured are not biased due to fake tracks by rejecting jets whose $\pt$ is carried almost entirely by a single hadron. We found that the distribution of the $z_{\mathrm{leading}}=p_{T}^{\mathrm{track}}/\pt^{\mathrm{jet}}$ variable shows a peak near unity that is discontinuous with the remainder of the distribution. The fake jet population due to single mis-measured tracks is removed by requiring $z_{\mathrm{leading}}<0.98$ independent of jet $\pt$, where $z_{\mathrm{leading}}$ refers to the $z$ value of the most energetic hadron candidate in the jet. The effect of this cut is negligible for jet $\pt>$10 GeV.
+
+
+
+
